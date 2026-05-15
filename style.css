@@ -143,3 +143,30 @@ section .infos {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(127,255,0,0.6);
 }
+.controls {
+  width: 400px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.middle {
+  display: flex;
+  gap: 40px;
+}
+
+.controls button {
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  backdrop-filter: blur(10px);
+}
