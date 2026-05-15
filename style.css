@@ -1,0 +1,145 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;  /* fixes padding/border causing overflow */
+}
+:root {
+  --bg-primary-color: #0c0c0c;
+  --text-primary-color: #f0f0f0;
+  --space--xs: 4px;
+  --space--sm: 8px;
+  --space--md: 16px;
+  --space--lg: 32px;
+  --space--xl: 64px;
+  --space--xxl: 128px;
+  --space--xxxl: 256px;
+  --border--radius--xs: 4px;
+  --border--radius--sm: 8px;
+  --border--radius--md: 16px;
+  --border--radius--lg: 20px;
+  --border--radius--xl: 24px;
+  --border--radius--xxl: 28px;
+  --border--radius--xxxl: 32px;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-primary-color);
+  overflow: hidden;
+  color: var(--text-primary-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border-color: var(--text-primary-color);
+    background:
+    radial-gradient(circle at top, #1b1b1b, #050505);
+}
+main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+section {
+  height: 100%;
+  width: 100%;
+  color: antiquewhite;
+  border: 2px solid;
+  border-color: rgb(227, 226, 165);
+  border-radius: var(--border--radius--lg);
+  display: flex;            /* added */
+  flex-direction: column;   /* added */
+}
+section .infos {
+  display: flex;
+  margin: var(--space--md);
+  gap: var(--space--md);         /* reduced from --space--xxl (128px) */
+  justify-content: space-around;
+  width: auto;                   /* removed width:100% to prevent overflow */
+  flex-wrap: wrap;               /* wraps on small screens */
+}
+.info {
+  padding: 12px 28px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+} 
+.info span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board {
+  margin: var(--space--sm);
+  padding: var(--space--sm);
+  border-radius: 16px;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30px);
+  grid-template-rows: repeat(auto-fill, 30px);
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.2);
+
+  background:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+    #101010;
+
+  box-shadow:
+    inset 0 0 20px rgba(0,0,0,0.5),
+    0 0 30px rgba(0,0,0,0.4);
+}
+.block {
+  height: 30px;
+  width: 30px;
+  transition: background-color 0.12s ease, transform 0.12s ease, box-shadow 0.12s ease;
+}
+.fill {
+  background: linear-gradient(135deg, #32cd32, #228b22);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.2),
+    0 0 6px rgba(50,205,50,0.35);
+}
+.food {
+  background: radial-gradient(circle, #ff6b6b, #b22222);
+  border-radius: 50%;
+  transform: scale(0.7);
+  box-shadow:
+    0 0 12px rgba(255,80,80,0.8),
+    inset 0 2px 4px rgba(255,255,255,0.35);
+}
+.pop{
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+  height: 500px;
+  width: 500px;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: antiquewhite;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+}
+.pop h1{
+  border-radius: 25px;
+  border: 2px solid #111;
+  padding:  10px 20px;
+}
+.pop button{
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.head{
+  background: linear-gradient(135deg, #7fff00, #2e8b57);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(127,255,0,0.6);
+}
