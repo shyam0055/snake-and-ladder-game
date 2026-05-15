@@ -1,6 +1,7 @@
 // ==========================================
 // 1. SELECT DOM ELEMENTS
 // ==========================================
+//buttons
 
 // Main game board
 const board = document.querySelector(".board");
@@ -131,7 +132,26 @@ addEventListener("keydown", (event) => {
     direction = "right";
   }
 });
+const up = document.querySelector(".up");
+const down = document.querySelector(".down");
+const left = document.querySelector(".left");
+const right = document.querySelector(".right");
 
+up.addEventListener("click", () => {
+  if (prev !== "down") direction = "up";
+});
+
+down.addEventListener("click", () => {
+  if (prev !== "up") direction = "down";
+});
+
+left.addEventListener("click", () => {
+  if (prev !== "right") direction = "left";
+});
+
+right.addEventListener("click", () => {
+  if (prev !== "left") direction = "right";
+});
 // ==========================================
 // 9. MAIN GAME LOOP
 // ==========================================
@@ -154,6 +174,7 @@ let gameloop = setInterval(() => {
   // 10. CALCULATE NEW HEAD POSITION
   // ==========================================
 
+  
   if (direction === "left") {
     head = { x: snake[0].x, y: snake[0].y - 1 };
   } else if (direction === "right") {
